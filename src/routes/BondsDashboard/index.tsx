@@ -4,6 +4,7 @@ import axios, { AxiosResponse } from 'axios';
 import Nav from 'yii-steroids/ui/nav/Nav';
 import { Translation } from 'react-i18next';
 import { floor as _floor } from 'lodash';
+import moment from 'moment';
 
 import { getUser } from 'yii-steroids/reducers/auth';
 import { getBaseCurrency, getPairName, getQuoteCurrency } from 'reducers/currency';
@@ -51,7 +52,6 @@ enum OrdersTableTabEnum {
     ACTIVE = 'active',
     HISTORY = 'history',
 }
-
 class BondsDashboard extends React.Component<Props, State> implements ILongPullingComponent {
     _updateInterval;
     _updateTimeout;
@@ -75,7 +75,7 @@ class BondsDashboard extends React.Component<Props, State> implements ILongPulli
             currentDeficitPercent: Number(localStorage.getItem(DEFICIT_LS_KEY)) || 0,
             neutrinoReserves: 0,
             bondOrders: [],
-            liquidateOrders: []
+            liquidateOrders: [],
         };
     }
 
@@ -110,9 +110,13 @@ class BondsDashboard extends React.Component<Props, State> implements ILongPulli
             let reserveInWaves = balance - balanceLockWaves;
             reserveInWaves /= CurrencyEnum.getContractPow(CurrencyEnum.WAVES);
 
-            const neutrinoReserves = reserveInWaves * (controlPrice/NEUTRINO_DEC);
+            const neutrinoReserves = reserveInWaves * (controlPrice / NEUTRINO_DEC);
 
-            const BR = computeBR({ reserveInWaves, supplyInNeutrino: totalSupply }, controlPrice/NEUTRINO_DEC) * 100;
+            const BR =
+                computeBR(
+                    { reserveInWaves, supplyInNeutrino: totalSupply },
+                    controlPrice / NEUTRINO_DEC
+                ) * 100;
 
             this.setState({ backingRatio: BR, neutrinoReserves, neutrinoSupply: totalSupply });
             localStorage.setItem(BR_LS_KEY, String(BR));
@@ -169,14 +173,14 @@ class BondsDashboard extends React.Component<Props, State> implements ILongPulli
                     currentDeficitPercent: currentDeficitResponse.data,
                     userOrders: userOrdersResponse && userOrdersResponse.data,
                     bondOrders,
-                    liquidateOrders
+                    liquidateOrders,
                 };
 
                 if (newState.bondOrders.length === 0 && state.bondOrders.length > 0) {
-                    delete newState.bondOrders
+                    delete newState.bondOrders;
                 }
                 if (newState.liquidateOrders.length === 0 && state.liquidateOrders.length > 0) {
-                    delete newState.liquidateOrders
+                    delete newState.liquidateOrders;
                 }
 
                 this.setState({ ...newState } as any);
@@ -231,6 +235,8 @@ class BondsDashboard extends React.Component<Props, State> implements ILongPulli
         ];
     }
 
+    parseOldOrders() {}
+
     getBottomNavigationTabItems(t) {
         const { controlPrice, pairName } = this.props;
         const { userOrders } = this.state;
@@ -269,9 +275,7 @@ class BondsDashboard extends React.Component<Props, State> implements ILongPulli
             'https://medium.com/@neutrinoteam/neutrino-system-base-token-nsbt-new-auction-utility-liquidation-mechanics-d1589a2d5e25';
         const brText = (
             <div>
-                <span>
-                    {t('common.br_info.label')}
-                </span>
+                <span>{t('common.br_info.label')}</span>
                 <br />
                 <a href={link} target="_blank">
                     <b>{t('common.read_more.label')}</b>

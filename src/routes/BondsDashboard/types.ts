@@ -20,6 +20,7 @@ export interface IOrder {
     order_next?: string;
     order_prev?: string;
     debugRoi?: number;
+    type?: string;
 };
 
 export interface IUserOrders {

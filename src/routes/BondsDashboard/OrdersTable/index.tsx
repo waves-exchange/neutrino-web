@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import { Translation } from 'react-i18next';
 import { dal, html } from 'components';
-import { orderBy as _orderBy, round as _round, orderBy } from 'lodash';
+import { orderBy as _orderBy, round as _round, floor as _floor } from 'lodash';
 
 import './OrdersTable.scss';
 import PairsEnum from 'enums/PairsEnum';
@@ -55,7 +55,7 @@ export default class OrdersTable extends React.Component<Props, State> implement
             },
             usdnb: {
                 label: t('enums.currency.usdnb.label'),
-                get: (item) => (OrderTypeEnum.LIQUIDATE === item.type ? item.total : item.amount),
+                get: (item) => (OrderTypeEnum.LIQUIDATE === item.type ? item.total : _floor(item.amount, 6)),
             },
             price: {
                 label: 'BR',
