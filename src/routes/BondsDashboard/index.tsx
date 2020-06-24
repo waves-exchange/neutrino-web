@@ -23,6 +23,7 @@ import { TableRecord, TableHeader } from 'shared/Auction/Orderbook/types';
 import ReserveHeading from 'shared/Auction/ReserveHeading';
 import OrderProvider from 'shared/Auction/OrderProvider';
 import CurrencyEnum from 'enums/CurrencyEnum';
+import { sortOrders } from 'shared/Auction/OrderProvider/helpers';
 import { prettyPrintNumber } from 'ui/global/helpers';
 import {
     computeBR,
@@ -398,11 +399,15 @@ class BondsDashboard extends React.Component<Props, State> implements ILongPulli
     }
 
     render() {
-        const { liquidateOrders, bondOrders, userOrders, currentRoi, backingRatio } = this.state;
+        const { userOrders, currentRoi, backingRatio } = this.state;
+        let { liquidateOrders, bondOrders } = this.state;
 
         if (!bondOrders || !liquidateOrders) {
             return null;
         }
+
+        bondOrders = sortOrders(bondOrders)
+        liquidateOrders = sortOrders(liquidateOrders)
 
         const { controlPrice, baseCurrency, quoteCurrency, user, pairName } = this.props;
         const { formTab, currentDeficitPercent } = this.state;
