@@ -12,9 +12,10 @@
   align-content: space-between;
   align-items: center;
   flex-direction: column;
+  padding: 0 20px;
 
   &_info {
-    width: 330px;
+    max-width: 630px;
     min-height: 310px;
     border-radius: 5px;
     background-color: #ffffff;
@@ -22,13 +23,24 @@
     margin-top: 100px;
     margin-bottom: 50px;
     position: relative;
-    padding: 50px 35px 40px;
+    padding: 40px 70px 40px 40px;
+
+    @media screen and (max-width: 992px) {
+      padding: 20px 60px 20px 20px;
+    }
+
+    @media screen and (max-width: 768px) {
+      padding: 30px 60px 30px 30px;
+    }
+
+    @media screen and (max-width: 480px) {
+      padding: 20px;
+    }
   }
 
   &_title {
     display: flex;
     align-items: center;
-    justify-content: center;
     width: 100%;
     font-size: 18px;
     font-weight: 600;
@@ -36,15 +48,43 @@
   }
 
   &_content {
-    text-align: center;
     font-size: 12px;
     line-height: 1.5;
     margin-bottom: 40px;
+    white-space: pre-line;
+    padding-right: 80px;
+
+    @media screen and (max-width: 480px) {
+      padding-right: 0;
+    }
   }
 
-  .BondsDashboard_button {
-    margin: 0 auto;
-    min-width: 260px;
+  &_btns {
+    display: flex;
+
+    @media screen and (max-width: 480px) {
+      flex-direction: column;
+    }
+
+    button {
+      min-width: 46%;
+
+      @media screen and (max-width: 480px) {
+        min-width: 100%;
+      }
+    }
+  }
+
+  .BondsDashboard_buttondApp {
+    margin-right: 40px;
+
+    @media screen and (max-width: 992px) {
+      margin-right: 20px;
+    }
+
+    @media screen and (max-width: 480px) {
+      margin-right: 0;
+    }
   }
 
   &_closed {
@@ -52,11 +92,14 @@
     display: block;
     position: relative;
 
+    @media screen and (max-width: 480px) {
+      display: none;
+    }
+
     &Wrap {
       position: absolute;
-      top: -100px;
-      left: 50%;
-      transform: translateX(-50%);
+      top: -75px;
+      right: -40px;
     }
   }
 }

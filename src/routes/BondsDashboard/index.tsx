@@ -48,9 +48,11 @@ class BondsDashboard extends React.Component<Props, State> {
                                 </div>
                                 <div className={'BondsDashboard_title'}>
                                     Maintenance
-                                    </div>
+                                </div>
                                 <div className={'BondsDashboard_content'}>
-                                    Dear users! Regarding switching Neutrino price oracles to 6 decimals some infrastructure elements still need to be updated. NSBT auction interface is under construction, please don't hesitate to use Waves dApp (
+                                    Dear users!<br/><br/>
+                                    Regarding switching Neutrino price oracles to 6 decimals some infrastructure elements still need to be updated.<br/><br/>
+                                    NSBT auction interface is under construction, please don't hesitate to use Waves dApp (
                                     <a
                                         href="http://waves-dapp.com/"
                                         referrerPolicy="noopener noreferrer"
@@ -61,14 +63,24 @@ class BondsDashboard extends React.Component<Props, State> {
                                         href="https://waves.exchange/investments/nsbt"
                                         referrerPolicy="noopener noreferrer"
                                         target="_blank"
-                                    >https://waves.exchange/investments/nsbt</a>) NSBT interface to manage your assets. Thank you for understanding.
+                                    >https://waves.exchange/investments/nsbt</a>) NSBT interface to manage your assets.
+                                    <br /><br />
+                                    Thank you for understanding.
                                 </div>
-                                <Button className={'BondsDashboard_button'}
-                                    type={'button'}
-                                    onClick={this.goToWavesExchange}
-                                >
-                                    Go to Waves.Exchange
-                                </Button>
+                                <div className={'BondsDashboard_btns'}>
+                                    <Button className={'BondsDashboard_buttondApp'}
+                                        type={'button'}
+                                        onClick={this.goTodApp}
+                                    >
+                                        Go to Waves dApp
+                                    </Button>
+                                    <Button className={'BondsDashboard_buttonWExchange'}
+                                        type={'button'}
+                                        onClick={this.goToWavesExchange}
+                                    >
+                                        Go to Waves.Exchange
+                                    </Button>
+                                </div>
                             </div>
                         </div>
                     );
@@ -77,6 +89,9 @@ class BondsDashboard extends React.Component<Props, State> {
         );
     }
 
+    goTodApp() {
+        window.location.href = 'http://waves-dapp.com/';
+    }
     goToWavesExchange() {
         window.location.href = 'https://waves.exchange/investments';
     }
