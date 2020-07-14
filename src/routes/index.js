@@ -109,10 +109,11 @@ export default {
         [ROUTE_RPD]: {
             exact: true,
             path: '/rpd/:currency',
-            component: RpdDashboard,
+            component: BondsDashboard, //RpdDashboard,
             label: __(STAKING_DASHBOARD_LABEL),
             roles: UserRole.getAuth(),
             isShowLeftSidebar: true,
+            isSkipLoading: true,
         },
         // Exchange: {
         //     exact: true,
