@@ -144,7 +144,8 @@ export default {
             component: BondsDashboard,
             label: __(BONDS_DASHBOARD_LABEL),
             roles: UserRole.getAuth(),
-            isShowLeftSidebar: true,
+            isSkipLoading: true,
+            isShowLeftSidebar: false,
         },
         [ARTICLE_LABEL]: {
             exact: true,

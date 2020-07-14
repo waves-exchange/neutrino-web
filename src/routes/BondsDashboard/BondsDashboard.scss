@@ -5,113 +5,39 @@
 
   $root: &;
 
-  display: flex;
-  flex-direction: row;
   flex-wrap: nowrap;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: space-between;
+  align-items: center;
+  flex-direction: column;
 
-  $orderbook-width: 300px;
-  & > :nth-child(1) {
-    width: $orderbook-width;
-    // height: 1006px;
-
-    & > :nth-child(1) {
-      border-radius: 4px;
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-    }
+  &_info {
+    width: 330px;
+    height: 310px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: black;
+    margin-top: 100px;
+    margin-bottom: 50px;
   }
 
-  & > * {
-    height: 50%;
-  }
-
-  & > :nth-child(2) {
-    width: calc(100% - #{$orderbook-width});
-    padding-left: 8px;
-  }
-
-  padding-bottom: 8px;
-
-  &__orders {
-    padding: 27px;
-  }
-  
-  &__user-orders {
-    margin: 8px 0;
-    background: linear-gradient(197.87deg, #17183A 16.12%, #1E1E47 38.25%, #17183A 66.27%);
-  }
-
-  & .OrderbookReworked {
-    $orderbook-height: 50vh;
-    $orderbook-table-height: calc(#{$orderbook-height} - 176px);
-
-    height: calc(#{$orderbook-table-height} + 135px);
-    // height: 50%;
-
-    & tbody {
-      // height: calc(25vh + 108px);
-      min-height: $orderbook-table-height;
-      height:  $orderbook-table-height;
-      max-height:  $orderbook-table-height;
-    }
-  }
-  
-  & .heading-val {
+  &_title {
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
     align-items: center;
-    margin-top: -5px;
-
-    & img {
-      width: 20px;
-      height: 20px;
-      padding-right: 3px;
-    }
+    justify-content: center;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 600;
   }
 
-  @media screen and (max-width: 668px) {
-    flex-direction: column;
-    flex-wrap: nowrap;
+  &_button {
+  }
 
-    & > :nth-child(1) {
-      height: auto;
-    }
-
-    & .OrderbookReworked {
-      $row-height: 42px;
-      $orderbook-height: #{$row-height * 5};
-      $orderbook-table-height: calc(#{$orderbook-height} + 0px);
-
-      height: calc(#{$orderbook-height} + 135px);
-      // height: 50%;
-      & tbody {
-        // height: calc(25vh + 108px);
-        min-height: $orderbook-table-height;
-        height:  $orderbook-table-height;
-        max-height:  $orderbook-table-height;
-      }
-    }
-
-    & tbody {
-      width: 100vw;
-    }
-
-    & > :nth-child(1) {
-      width: 100vw;
-    };
-    & > :nth-child(2) {
-      width: 100%;
-      padding: 8px;
-    }
-
-    & .ReserveHeading__flex {
-      padding: 12px;
-
-      & > :nth-child(4) {
-        display: none;
-      }
-    }
+  &_closed {
+    margin: auto;
+    display: block;
+    position: relative;
   }
 }

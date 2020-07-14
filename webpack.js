@@ -23,7 +23,7 @@ require('yii-steroids/webpack')
                 },
                 {
                     context: ['/api', '/static'],
-                    target: 'http://localhost:5000',
+                    target: 'https://beta.neutrino.at',
                 },
             ]
         },
