@@ -145,7 +145,7 @@ export default {
             label: __(BONDS_DASHBOARD_LABEL),
             roles: UserRole.getAuth(),
             isSkipLoading: true,
-            isShowLeftSidebar: false,
+            isShowLeftSidebar: true,
         },
         [ARTICLE_LABEL]: {
             exact: true,

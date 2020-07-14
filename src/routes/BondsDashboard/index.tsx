@@ -43,17 +43,29 @@ class BondsDashboard extends React.Component<Props, State> {
                     return (
                         <div className={bem.block()}>
                             <div className={'BondsDashboard_info'}>
-                                <div>
-                                    <Closed className={'BondsDashboard_closed'}/>
-                                    <div className={'BondsDashboard_title'}>
-                                        Мы переехали
+                                <div className={'BondsDashboard_closedWrap'}>
+                                    <Closed className={'BondsDashboard_closed'} />
+                                </div>
+                                <div className={'BondsDashboard_title'}>
+                                    Maintenance
                                     </div>
-                                    <div className={'BondsDashboard_content'}>
-                                    </div>
+                                <div className={'BondsDashboard_content'}>
+                                    Dear users! Regarding switching Neutrino price oracles to 6 decimals some infrastructure elements still need to be updated. NSBT auction interface is under construction, please don't hesitate to use Waves dApp (
+                                    <a
+                                        href="http://waves-dapp.com/"
+                                        referrerPolicy="noopener noreferrer"
+                                        target="_blank"
+                                    >http://waves-dapp.com/</a>
+                                    ) or Waves.Exchange (
+                                    <a
+                                        href="https://waves.exchange/investments/nsbt"
+                                        referrerPolicy="noopener noreferrer"
+                                        target="_blank"
+                                    >https://waves.exchange/investments/nsbt</a>) NSBT interface to manage your assets. Thank you for understanding.
                                 </div>
                                 <Button className={'BondsDashboard_button'}
-                                        type={'button'}
-                                        onClick={this.goToWavesExchange}
+                                    type={'button'}
+                                    onClick={this.goToWavesExchange}
                                 >
                                     Go to Waves.Exchange
                                 </Button>
