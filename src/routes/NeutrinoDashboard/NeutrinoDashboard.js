@@ -246,6 +246,10 @@ export default class NeutrinoDashboard extends React.PureComponent {
         return _.round(_get(this.props, 'controlPrice', 0) / NEUTRINO_DEC, 2);
     }
 
+    getFullControlPrice() {
+        return _.round(_get(this.props, 'controlPrice', 0) / NEUTRINO_DEC, NEUTRINO_DEC);
+    }
+
     getTotalIssued() {
         return this.props.totalIssued
             ? _.round(this.props.totalIssued / CurrencyEnum.getContractPow(CurrencyEnum.USD_N), 2)
@@ -646,7 +650,7 @@ export default class NeutrinoDashboard extends React.PureComponent {
         }
         this._isProgramChange = true;
 
-        const rate = this.getControlPrice();
+        const rate = this.getFullControlPrice();
 
         let amount = this._parseAmount(
             isRefreshToAmount
