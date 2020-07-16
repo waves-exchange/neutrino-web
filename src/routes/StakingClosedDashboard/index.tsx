@@ -62,7 +62,7 @@ class BondsDashboard extends React.Component<Props, State> {
                                     >http://waves-dapp.com/</a>
                                     ) or Waves.Exchange (
                                     <a
-                                        href="https://waves.exchange/investments/nsbt"
+                                        href="https://waves.exchange/investments/staking"
                                         referrerPolicy="noopener noreferrer"
                                         target="_blank"
                                     >https://waves.exchange/investments/staking</a>) USDN Staking interface to manage your assets.
