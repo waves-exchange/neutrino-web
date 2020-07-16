@@ -1,0 +1,105 @@
+@import 'style/helpers/vars';
+@import 'style/helpers/mixins';
+
+.BondsDashboard {
+
+  $root: &;
+
+  flex-wrap: nowrap;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 20px;
+
+  &_info {
+    max-width: 630px;
+    min-height: 310px;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: black;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    position: relative;
+    padding: 40px 70px 40px 40px;
+
+    @media screen and (max-width: 992px) {
+      padding: 20px 60px 20px 20px;
+    }
+
+    @media screen and (max-width: 768px) {
+      padding: 30px 60px 30px 30px;
+    }
+
+    @media screen and (max-width: 480px) {
+      padding: 20px;
+    }
+  }
+
+  &_title {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+
+  &_content {
+    font-size: 12px;
+    line-height: 1.5;
+    margin-bottom: 40px;
+    white-space: pre-line;
+    padding-right: 80px;
+
+    @media screen and (max-width: 480px) {
+      padding-right: 0;
+    }
+  }
+
+  &_btns {
+    display: flex;
+
+    @media screen and (max-width: 480px) {
+      flex-direction: column;
+    }
+
+    button {
+      min-width: 46%;
+
+      @media screen and (max-width: 480px) {
+        min-width: 100%;
+      }
+    }
+  }
+
+  .BondsDashboard_buttondApp {
+    margin-right: 40px;
+
+    @media screen and (max-width: 992px) {
+      margin-right: 20px;
+    }
+
+    @media screen and (max-width: 480px) {
+      margin-right: 0;
+    }
+  }
+
+  &_closed {
+    margin: auto;
+    display: block;
+    position: relative;
+
+    @media screen and (max-width: 480px) {
+      display: none;
+    }
+
+    &Wrap {
+      position: absolute;
+      top: -75px;
+      right: -40px;
+    }
+  }
+}
