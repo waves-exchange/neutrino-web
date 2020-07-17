@@ -43,7 +43,7 @@ class LandingPage extends React.Component<{}, State> {
             <div>
                 <Head>
                     <link rel="icon" href={'static/images/favicon.ico'} />
-                    <title>Neutrino</title>
+                    <title>Neutrino Dollar (USDN) - stable coin pegged to the US dollar</title>
                 </Head>
                 <div className="Layout">
                     <div></div>
