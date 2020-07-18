@@ -62,7 +62,7 @@ export const defaultLearnLinks = [
     },
     {
         label: DISCUSSIONS_LABEL,
-        url: 'https://t.me/neutrino_protocol_group',
+        url: 'https://t.me/neutrino_group',
         target: '_blank',
     },
     {
