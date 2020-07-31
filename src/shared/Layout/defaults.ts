@@ -22,7 +22,7 @@ export const defaultProductLinks = [
     },
     {
         label: STAKING_DASHBOARD_LABEL,
-        url: 'rpd/usd-n',
+        url: '/rpd/usd-n',
     },
     {
         label: BONDS_DASHBOARD_LABEL,
