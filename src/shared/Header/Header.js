@@ -125,17 +125,18 @@ export default class Header extends React.PureComponent {
                         <GlobalLinksContext.Consumer>
                             {(links) => (
                                 <header className={bem.block()}>
-                                    <Link
+                                    <a
                                         className={bem.element('logo')}
                                         noStyles
-                                        toRoute={ROUTE_ROOT}
+                                        //toRoute={ROUTE_ROOT}
+                                        href="/"
                                     >
                                         <img
                                             className={bem.element('logo-image')}
                                             src={logo}
                                             alt="Neutrino"
                                         />
-                                    </Link>
+                                    </a>
                                     {(showNav && (
                                         <div className={bem.element('section-toggle')}>
                                             <Form
