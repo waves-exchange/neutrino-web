@@ -34,6 +34,7 @@ import { ROUTE_ROOT, ROUTE_STAKING_LANDING_PAGE } from 'routes';
 import NavItemSchema from 'types/NavItemSchema';
 
 import './Header.scss';
+import { STAKING_DASHBOARD_LABEL } from '../Layout/constants';
 
 const bem = html.bem('Header');
 const FORM_ID = 'SectionToggle';
@@ -76,6 +77,11 @@ export default class Header extends React.PureComponent {
     }
 
     onNavItemChange(item, dexLink) {
+        if (item.label === STAKING_DASHBOARD_LABEL) {
+            location.href=`/rpd/usd-n`;
+            return ;
+        }
+
         if (item.label === ARTICLE_LABEL && this.lastNavItem) {
             window.open(dexLink);
             store.dispatch(change(FORM_ID, 'section', this.lastNavItem.id));
@@ -125,17 +131,18 @@ export default class Header extends React.PureComponent {
                         <GlobalLinksContext.Consumer>
                             {(links) => (
                                 <header className={bem.block()}>
-                                    <Link
+                                    <a
                                         className={bem.element('logo')}
                                         noStyles
-                                        toRoute={ROUTE_ROOT}
+                                        //toRoute={ROUTE_ROOT}
+                                        href="/"
                                     >
                                         <img
                                             className={bem.element('logo-image')}
                                             src={logo}
                                             alt="Neutrino"
                                         />
-                                    </Link>
+                                    </a>
                                     {(showNav && (
                                         <div className={bem.element('section-toggle')}>
                                             <Form

@@ -30,13 +30,14 @@ export default class LeftSidebar extends React.PureComponent {
     render() {
         return (
             <div className={bem.block()}>
-                <Link
+                <a
                     className={bem.element('home-icon')}
                     noStyles
-                    toRoute={ROUTE_ROOT}
+                    //toRoute={ROUTE_ROOT}
+                    href="/"
                 >
                     <span className={'Icon Icon__home'}/>
-                </Link>
+                </a>
                 <div className={bem.element('currencies')}>
                     {CurrencyEnum.getKeys().map(currency => (
                         <div

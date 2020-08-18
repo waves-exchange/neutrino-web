@@ -145,7 +145,6 @@ class LandingHeader extends React.Component<Props, State> {
                                     <InstallKeeperModalContext.Consumer>
                                         {(installKeeperContext) => {
                                             const currentLinks = this.getLinks(t);
-
                                             currentLinks[currentLinks.length - 1] = {
                                                 ...currentLinks[currentLinks.length - 1],
                                                 onClick: async () => {

@@ -22,7 +22,7 @@ export const defaultProductLinks = [
     },
     {
         label: STAKING_DASHBOARD_LABEL,
-        url: 'rpd/usd-n',
+        url: '/rpd/usd-n',
     },
     {
         label: BONDS_DASHBOARD_LABEL,
@@ -62,7 +62,7 @@ export const defaultLearnLinks = [
     },
     {
         label: DISCUSSIONS_LABEL,
-        url: 'https://t.me/neutrino_protocol_group',
+        url: 'https://t.me/neutrino_group',
         target: '_blank',
     },
     {

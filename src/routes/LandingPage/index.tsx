@@ -52,7 +52,7 @@ class LandingPage extends React.Component<Props> {
                     const paragraph = (
                         <p>
                             <span>
-                                {t('landing.first_paragraph.label')}.&nbsp;
+                                {t('landing.first_paragraph.label')}&nbsp;
                             </span>
                             <span>
                                 {t('landing.second_paragraph.label')}
