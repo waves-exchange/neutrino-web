@@ -53,7 +53,7 @@ class BondsDashboard extends React.Component<Props, State> {
                                     Dear users!<br/><br/>
                                     Regarding switching Neutrino price oracles to 6 decimals some infrastructure
                                     elements still need to be updated.<br/><br/>
-                                    NSBT auction interface is under construction, please don't hesitate to use Waves
+                                    Staking interface is under construction, please don't hesitate to use Waves
                                     dApp (
                                     <a
                                         href="http://waves-dapp.com/"
@@ -62,10 +62,10 @@ class BondsDashboard extends React.Component<Props, State> {
                                     >http://waves-dapp.com/</a>
                                     ) or Waves.Exchange (
                                     <a
-                                        href="https://waves.exchange/investments/nsbt"
+                                        href="https://waves.exchange/investments/staking"
                                         referrerPolicy="noopener noreferrer"
                                         target="_blank"
-                                    >https://waves.exchange/investments/nsbt</a>) NSBT interface to manage your assets.
+                                    >https://waves.exchange/investments/staking</a>) USDN Staking interface to manage your assets.
                                     <br/><br/>
                                     Thank you for understanding.
                                 </div>
@@ -96,7 +96,7 @@ class BondsDashboard extends React.Component<Props, State> {
     }
 
     goToWavesExchange() {
-        window.location.href = 'https://waves.exchange/investments';
+        window.location.href = 'https://waves.exchange/investments/staking';
     }
 }
 

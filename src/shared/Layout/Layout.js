@@ -85,6 +85,7 @@ const bem = html.bem('Layout');
 @screenWatcherHoc()
 @connect((state) => ({
     isShowLeftSidebar: getCurrentItemParam(state, 'isShowLeftSidebar'),
+    isSkipLoading: getCurrentItemParam(state, 'isSkipLoading'),
     matchParams: state.navigation.params,
     data: getData(state),
     currentItem: getCurrentItem(state),
@@ -372,7 +373,7 @@ class Layout extends React.PureComponent {
     getDefaultBody() {
         const { isBlurred } = this.state;
         const isBlocked = _get(this.props, 'neutrinoConfig.isBlocked');
-
+        const isReady = _get(this.props, 'isSkipLoading') || this.props.status !== STATUS_LOADING;
         let elements = [
             this.props.isShowLeftSidebar && (
                 <aside className={bem.element('left')}>
@@ -385,7 +386,7 @@ class Layout extends React.PureComponent {
                     <Header />
                 </header>
                 <main className={bem.element('content', isBlurred ? 'blurred' : '')}>
-                    {this.props.status !== STATUS_LOADING && this.props.children}
+                    {isReady && this.props.children}
                 </main>
             </div>,
             <aside className={bem.element('right')}>

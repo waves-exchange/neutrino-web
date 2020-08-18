@@ -2,6 +2,7 @@ import React from 'react';
 import { Redirect, Route } from 'react-router';
 // import IndexPage from './IndexPage';
 import NeutrinoDashboard from './NeutrinoDashboard';
+import StakingClosedDashboard from './StakingClosedDashboard';
 import BondsDashboard from './BondsDashboard';
 import LeadingDashboard from './LeadingDashboard';
 import StakingLanding from 'shared/Staking/StakingLanding';
@@ -109,10 +110,11 @@ export default {
         [ROUTE_RPD]: {
             exact: true,
             path: '/rpd/:currency',
-            component: RpdDashboard,
+            component: StakingClosedDashboard, //RpdDashboard,
             label: __(STAKING_DASHBOARD_LABEL),
             roles: UserRole.getAuth(),
             isShowLeftSidebar: true,
+            isSkipLoading: true,
         },
         // Exchange: {
         //     exact: true,
@@ -144,6 +146,7 @@ export default {
             component: BondsDashboard,
             label: __(BONDS_DASHBOARD_LABEL),
             roles: UserRole.getAuth(),
+            isSkipLoading: true,
             isShowLeftSidebar: true,
         },
         [ARTICLE_LABEL]: {

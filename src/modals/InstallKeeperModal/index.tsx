@@ -40,7 +40,7 @@ function HelpLink() {
                 <span>Watch video instructions</span>
             </a>
             <a
-                href="https://t.me/neutrino_protocol_group"
+                href="https://t.me/neutrino_group"
                 target="_blank"
                 className={bem.element('tg-link')}
             >
@@ -205,7 +205,7 @@ class InstallKeeperModal extends React.Component<Props, State> {
         );
     }
 
-    getCompaniesView() { 
+    getCompaniesView() {
         const mapIcon = (item: ImageLink) => (
             <a href={item.link} target="_blank">
                 <img src={item.img} />
