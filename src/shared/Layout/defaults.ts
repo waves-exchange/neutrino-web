@@ -67,7 +67,7 @@ export const defaultLearnLinks = [
     },
     {
         label: GITHUB_LABEL,
-        url: 'https://github.com/ventuary-lab',
+        url: 'https://github.com/waves-exchange/neutrino-contract',
         target: '_blank',
     },
     {
