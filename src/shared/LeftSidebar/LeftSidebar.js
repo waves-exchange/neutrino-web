@@ -34,7 +34,8 @@ export default class LeftSidebar extends React.PureComponent {
                     className={bem.element('home-icon')}
                     noStyles
                     //toRoute={ROUTE_ROOT}
-                    href="/"
+                    rel="noopener"
+                    href="https://neutrino.at"
                 >
                     <span className={'Icon Icon__home'}/>
                 </a>

@@ -135,7 +135,8 @@ export default class Header extends React.PureComponent {
                                         className={bem.element('logo')}
                                         noStyles
                                         //toRoute={ROUTE_ROOT}
-                                        href="/"
+                                        rel="noopener"
+                                        href="https://neutrino.at"
                                     >
                                         <img
                                             className={bem.element('logo-image')}
